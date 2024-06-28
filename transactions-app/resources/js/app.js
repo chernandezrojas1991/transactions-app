@@ -1,5 +1,9 @@
-import './bootstrap';
 import '../css/app.css';
+import './bootstrap';
+import 'bootstrap';
+import 'bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js';
+import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
+
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';

@@ -1,0 +1,22 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[x-cloak] {
+    display: none;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.h2-title{
+    margin-bottom: 10px;
+}
+
+.h2-sum{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

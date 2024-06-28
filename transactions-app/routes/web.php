@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\IncomeController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -26,3 +28,8 @@ Route::middleware([
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+#index es el método para obtener todos los ingresos registrados
+Route::get('/incomes', [IncomeController::class, 'index']);
+
+
