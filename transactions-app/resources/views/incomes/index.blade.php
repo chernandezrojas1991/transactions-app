@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Lista de Ingresos/Egresos</h1>
-    <a href="incomes/create">
+    <a href="incomes/create" type="button">
         Agregar nuevo ingreso/egreso
     </a>
     <br>
@@ -21,6 +21,10 @@
             </li>
         @endforeach
     </ul>
-    <p>Total Ganancias: ${{ $totalAmount }}</p>
+    @if ($totalAmount > 0)
+        <p>Total Ganancias: ${{ $totalAmount }}</p>
+    @else
+        <p>De momento no hay ganancias</p>
+    @endif
 </body>
 </html>

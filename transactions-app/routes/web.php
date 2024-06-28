@@ -31,29 +31,31 @@ Auth::routes();
 
 #index es el método para obtener todos los ingresos registrados
 #obtener lista de ingresos
-Route::get('/incomes', [IncomeController::class, 'index']);
+#Route::get('/incomes', [IncomeController::class, 'index']);
 
 #obtener formulario donde creo un ingreso
 #create es el método para crear y mostrar el formulario que permite agregar un ingreso
 #incomes/create sería home
-Route::get('/incomes/create', [IncomeController::class, 'create']);
+#Route::get('/incomes/create', [IncomeController::class, 'create']);
 
 #obtener ingreso dado un id
-Route::get('/incomes/{income}', [IncomeController::class, 'show']);
+#Route::get('/incomes/{income}', [IncomeController::class, 'show']);
 
 #mostrar formulario de edición
-Route::get('/incomes/{income}/edit', [IncomeController::class, 'edit']);
+#Route::get('/incomes/{income}/edit', [IncomeController::class, 'edit']);
 
 ########## post method ##########
 
 #store para agregar un ingreso a bd
-Route::post('/incomes', [IncomeController::class, 'store']);
+#Route::post('/incomes', [IncomeController::class, 'store']);
 
 ###### put method ######
-Route::put('/incomes/{income}', [IncomeController::class, 'update']);
+#Route::put('/incomes/{income}', [IncomeController::class, 'update']);
 
 ##### delete method #####
-Route::delete('/incomes/{income}', [IncomeController::class, 'destroy']);
+#Route::delete('/incomes/{income}', [IncomeController::class, 'destroy']);
 
+##### Para ahorrar código existe esta sentencia: ####
+Route::resource('incomes', IncomeController::class);
 
 
