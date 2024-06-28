@@ -37,8 +37,8 @@ class IncomeController extends Controller
     }
 
     #en $income viene el id del ingreso/egreso
-    public function show($id){
-        $income = Income::find($id);
+    public function show($income){
+        $income = Income::find($income);
         return view('incomes.show', compact('income'));
     }
 
@@ -59,6 +59,9 @@ class IncomeController extends Controller
     }
 
     public function destroy($income){
-        return "eliminar post: {$income}";
+        $income = Income::find($income);
+        $income->delete();
+
+        return redirect('/incomes');
     }
 }
