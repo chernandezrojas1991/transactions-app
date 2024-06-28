@@ -9,13 +9,15 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <!-- cada vez que se ejecute, será recibido por Route::post(/incomes) --> 
+    <!-- cada vez que se ejecute, será recibido por Route::post(/incomes).
+        Si no se especifica, por defecto va a get
+    --> 
     <form action="/incomes" method="POST">
         <!-- agregar token para evitar que extraños agreguen formularios -->
         @csrf
         <label>
             Ingresar monto:
-            <input type="number" name="title-input-amount">
+            <input type="number" name="amount" id="inputAmount" required>
         </label>
         <br>
         <button class="btn btn-primary" type="submit">

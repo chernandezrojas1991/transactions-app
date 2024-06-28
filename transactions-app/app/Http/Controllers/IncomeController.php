@@ -23,7 +23,38 @@ class IncomeController extends Controller
         return view('incomes.create');
     }
 
-    public function store(){
-        
+    #Al pasar Request request como parámetro, hacemos inyección
+    public function store(Request $request){
+        #obtener valores ingresados y setearlos en un objeto de tipo Income
+        $income = new Income();
+        $income->amount = $request->amount;
+
+        #guardar cambios
+        $income->save();
+
+        #redirigir a vista de /incomes (donde imprimo lista de ingresos)
+        return redirect('/incomes');
+    }
+
+    #en $income viene el id del ingreso/egreso
+    public function show($id){
+        $income = Income::find($id);
+        return view('incomes.show', compact('income'));
+    }
+
+    public function edit($income){
+        $income = Income::find($income);
+        return view('incomes.edit', compact('income'));
+    }
+
+    #recupera los campos del formulario en request y la info de la url con $income
+    public function update(Request $request, $income){
+        #encontrar el objeto que deseo actualizar
+        $income = Income::find($income);
+        $income->amount = $request->amount;
+
+        #update en db
+        $income->save();
+        return redirect("/incomes/{$income->id}");
     }
 }

@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('amount');
-
+            $table->timestamps();
             $table->primary('id');
         });
     }

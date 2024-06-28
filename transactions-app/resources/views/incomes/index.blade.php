@@ -4,14 +4,23 @@
     <title>Ingresos</title>
 </head>
 <body>
-    <h1>Lista de Ingresos</h1>
+    <h1>Lista de Ingresos/Egresos</h1>
+    <a href="incomes/create">
+        Agregar nuevo ingreso/egreso
+    </a>
+    <br>
+    <br>
     <ul>
         @php $totalAmount = 0; @endphp
         @foreach ($incomes as $income)
-            <li>${{ $income->amount }}</li>
-            @php $totalAmount += $income->amount; @endphp
+            <li>
+                <a href="/incomes/{{$income->id}}">
+                    {{$income->id}}. ${{ $income->amount }}
+                </a>
+                @php $totalAmount += $income->amount; @endphp
+            </li>
         @endforeach
     </ul>
-    <p>Total Ingresos: ${{ $totalAmount }}</p>
+    <p>Total Ganancias: ${{ $totalAmount }}</p>
 </body>
 </html>
