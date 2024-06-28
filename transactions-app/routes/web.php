@@ -27,9 +27,20 @@ Route::middleware([
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+#Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 #index es el método para obtener todos los ingresos registrados
+#obtener lista de ingresos
 Route::get('/incomes', [IncomeController::class, 'index']);
+#store para agregar un ingreso a bd
+Route::post('/incomes', [IncomeController::class, 'store']);
+
+#############################################################
+
+#obtener formulario donde creo un ingreso
+#create es el método para crear y mostrar el formulario que permite agregar un ingreso
+#incomes/create sería home
+Route::get('/incomes/create', [IncomeController::class, 'create']);
+
 
 

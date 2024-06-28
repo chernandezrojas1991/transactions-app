@@ -14,7 +14,16 @@ class IncomeController extends Controller
 
         #Para pasarlo a la vista
         #compact recibe el nombre de la variable que denotamos por $, un poco más arriba
-        #view(folder,file)
+        #determinar la vista que quiero mostrar view(folder,file)
         return view('incomes.index', compact('incomes'));
+    }
+
+    #mostrar vista para crear ingreso/egreso
+    public function create(){
+        return view('incomes.create');
+    }
+
+    public function store(){
+        
     }
 }
