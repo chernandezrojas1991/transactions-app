@@ -57,4 +57,8 @@ class IncomeController extends Controller
         $income->save();
         return redirect("/incomes/{$income->id}");
     }
+
+    public function destroy($income){
+        return "eliminar post: {$income}";
+    }
 }

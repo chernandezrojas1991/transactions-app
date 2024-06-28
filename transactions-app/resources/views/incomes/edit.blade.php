@@ -10,7 +10,8 @@
         </label>
         <br>
         <button class="btn btn-primary" type="submit">
-            Actualizar ingreso/egreso
+            Editar ingreso/egreso
         </button>
     </form>
+    
 </x-app-layout>

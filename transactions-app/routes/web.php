@@ -52,5 +52,8 @@ Route::post('/incomes', [IncomeController::class, 'store']);
 ###### put method ######
 Route::put('/incomes/{income}', [IncomeController::class, 'update']);
 
+##### delete method #####
+Route::delete('/incomes/{income}', [IncomeController::class, 'destroy']);
+
 
 
